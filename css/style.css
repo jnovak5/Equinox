@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
 :root
 {
     --bg-black-900:#f2f2fc;
@@ -15,6 +17,7 @@ body.dark
     --text-black-900:#ffffff;
     --text-black-700:#e9e9e9;
 }
+
 body
 {
     line-height: 1.5;
@@ -323,18 +326,24 @@ ul
     flex: 0 0 60%;
     max-width: 60%;
 }
-h3.hello
-{
-    font-size: 28px;
+h3.hello {
+    font-size: 40px;
     margin: 15px 0;
+    text-align: center; /* Center-align the text */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 100%; /* Ensure it spans the entire width */
 }
-h3.hello span
-{
-    font-family: 'Clicker Script' , cursive;
-    font-size: 30px;
+
+h3.hello span {
+    font-family: 'Nosifer', cursive;
+    font-size: 48px;
     font-weight: 700;
     color: var(--skin-color);
 }
+
+
 h3.my-profession
 {
     font-size: 30px;
@@ -503,12 +512,28 @@ h3.my-profession
     font-weight: 400;
     line-height: 40px;
 }
+/* Default behavior: splits the space between education and experience */
 .about .about-content .education,
-.about .about-content .experience
-{
+.about .about-content .experience {
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 30px;
+}
+
+/* If only one of the elements is present, it will take up the entire width */
+.about .about-content .education:only-child,
+.about .about-content .experience:only-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* If no other element is adjacent, they will take up the full width */
+.about .about-content .education:only-child + .experience,
+.about .about-content .experience:only-child + .education {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
 }
 .about .about-content h3.title 
 {
@@ -590,8 +615,8 @@ h3.my-profession
 
 .about .about-img
 {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 60%; /* Increased from 40% to 60% */
+    max-width: 60%; /* Increased from 40% to 60% */
     text-align: center;
     position: relative;
 }
@@ -603,9 +628,9 @@ h3.my-profession
     width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: -300px;
+    right: -200px; /* Adjusted to better align with increased image size */
     bottom: -30px;
-    left: 370px;
+    left: 470px; /* Adjusted to better align with increased image size */
 }
 
 .about-img::before
@@ -616,20 +641,20 @@ h3.my-profession
     width: 80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
-    left: 5 px;
-    top: 5 px;
-    left: 65px
-    
+    left: 5px; /* Corrected spacing issue */
+    top: 5px; /* Corrected spacing issue */
+    left: 65px;
 }
+
 .about .about-img img
 {
     margin: auto;
     border-radius: 5px;
-    padding-left: 120px;
-    padding-top: 50px;
-    padding-bottom: -5px;
-    height: 450px;
+    padding-left: 60px; /* Reduced padding to allow the image to take up more space */
+    padding-top: 30px; /* Reduced padding to allow the image to take up more space */
+    height: 500px; /* Increased height to make the image larger */
 }
+
 
 /* service */
 .service .container
@@ -901,4 +926,58 @@ h3.my-profession
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+.equinox-rules {
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text for general content */
+    padding: 40px; /* Increased padding for more white space */
+    border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+.equinox-rules .title {
+    color: #FF0000; /* Red color for the title */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center; /* Center-align the title */
+    margin-bottom: 30px; /* Space below the title */
+}
+
+.equinox-rules .timeline {
+    border-left: 2px solid #FF0000; /* Red border for the timeline */
+    padding-left: 30px; /* More padding for the timeline */
+}
+
+.equinox-rules .timeline-item {
+    margin-bottom: 30px; /* Increased margin for more spacing between items */
+}
+
+.equinox-rules .timeline-title {
+    color: #FF0000; /* Red color for the timeline titles */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below the timeline titles */
+}
+
+.equinox-rules .timeline-date {
+    color: #FFFFFF; /* White text for dates */
+    font-size: 16px;
+    margin-bottom: 10px; /* Space below the dates */
+}
+
+.equinox-rules .timeline-text {
+    color: #FFFFFF; /* White text for timeline content */
+    font-size: 16px;
+    line-height: 1.6; /* Improved readability with increased line height */
+    margin-bottom: 10px; /* Space below each paragraph */
+}
+
+.equinox-rules .circle-dot {
+    background-color: #FF0000; /* Red color for the dots */
+    width: 12px; /* Slightly larger dots */
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px; /* Space between the dot and text */
+    vertical-align: middle; /* Aligns the dot with the text */
 }
