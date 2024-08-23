@@ -106,6 +106,7 @@ const nav = document.querySelector(".nav"),
             aside = document.querySelector(".aside");
             navTogglerBtn.addEventListener("click", () => 
             {
+                console.log("Toggler clicked");
                 asideSectionTogglerBtn();
             })
             function asideSectionTogglerBtn()
