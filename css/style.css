@@ -49,20 +49,15 @@ ul
     padding: 0 30px;
     opacity: 1;
     position: fixed;
-    left: 0px;
+    left: 270px;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    transition: left 0.3s ease;
+    transition: all 0.3s ease;
 }
-
-.section.open {
-    left: 270px; /* Content is pushed to the right when sidebar is visible */
-}
-
 .section.back-section
 {
     z-index: 1;
@@ -181,7 +176,7 @@ ul
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
-    left: -270px
+    left: 0;
     top: 0;
     padding: 30px;
     height: 100%;
@@ -190,13 +185,8 @@ ul
     justify-content: center;
     align-items: center;
     z-index: 10;
-    transition: left 0.3s ease;
+    transition: all 0.3s ease;
 }
-
-.aside.open {
-    left: 0; /* Visible on-screen */
-}
-
 .aside .logo
 {
     position: absolute;
@@ -874,11 +864,11 @@ h3.my-profession
     }
     .aside
     {
-        transition: left 0.3s ease;
+        left: -270px;
     }
     .aside.open 
     {
-        left: 0; /* Sidebar is fully visible on the screen */
+        left: 0;
     }
     .aside .nav-toggler
     {
@@ -895,8 +885,7 @@ h3.my-profession
     }
     .section.open 
     {
-        left: 270px; /* Adjust content position to make space for the sidebar */
-        transition: left 0.3s ease; /* Smooth transition for the main content */
+        left: 270px;
     }
     .about .about-content .personal-info .info-item p span 
     {
