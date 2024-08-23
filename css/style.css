@@ -49,15 +49,20 @@ ul
     padding: 0 30px;
     opacity: 1;
     position: fixed;
-    left: 270px;
+    left: 0px;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    transition: all 0.3s ease;
+    transition: left 0.3s ease;
 }
+
+.section.open {
+    left: 270px; /* Content is pushed to the right when sidebar is visible */
+}
+
 .section.back-section
 {
     z-index: 1;
@@ -176,7 +181,7 @@ ul
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
-    left: 0;
+    left: -270px
     top: 0;
     padding: 30px;
     height: 100%;
@@ -184,9 +189,14 @@ ul
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    transition: all 0.3s ease;
+    z-index: 10;
+    transition: left 0.3s ease;
 }
+
+.aside.open {
+    left: 0; /* Visible on-screen */
+}
+
 .aside .logo
 {
     position: absolute;
