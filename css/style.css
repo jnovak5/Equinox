@@ -864,11 +864,11 @@ h3.my-profession
     }
     .aside
     {
-        left: -270px;
+        transition: left 0.3s ease;
     }
     .aside.open 
     {
-        left: 0;
+        left: 0; /* Sidebar is fully visible on the screen */
     }
     .aside .nav-toggler
     {
@@ -885,7 +885,8 @@ h3.my-profession
     }
     .section.open 
     {
-        left: 270px;
+        left: 270px; /* Adjust content position to make space for the sidebar */
+        transition: left 0.3s ease; /* Smooth transition for the main content */
     }
     .about .about-content .personal-info .info-item p span 
     {
